@@ -1,0 +1,66 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+      - name: Lint
+        run: ruff check .
+      - name: Test
+        run: pytest --cov=ratecraft --cov-report=term-missing
+
+  rebuild:
+    # The README quotes measured numbers. This job downloads the pinned data,
+    # refits every model from scratch, fails if any committed number moved,
+    # and uploads the fitted pricer with the results and charts.
+    needs: lint-and-test
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install the pinned versions
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -e . --no-deps
+      - name: Keep the committed metrics
+        run: cp results/metrics.json "$RUNNER_TEMP/committed-metrics.json"
+      - name: Cache the source data
+        uses: actions/cache@v4
+        with:
+          path: data/raw
+          key: casdatasets-227fb56b-fremtpl2
+      - name: Rebuild every result
+        run: python scripts/run_all.py
+      - name: Check the committed numbers still reproduce
+        run: python scripts/verify_metrics.py "$RUNNER_TEMP/committed-metrics.json" results/metrics.json
+      - name: Upload the pricer, results and charts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ratecraft-pricer
+          path: |
+            results/
+            assets/
+          retention-days: 30
