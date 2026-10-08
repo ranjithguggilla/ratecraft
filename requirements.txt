@@ -1,0 +1,24 @@
+# Exact versions every number in the README was measured with.
+# pyproject.toml carries the looser ranges; this file is for a faithful rebuild.
+
+numpy==2.2.6
+pandas==2.3.3
+scipy==1.15.3
+scikit-learn==1.7.2
+glum==3.4.1
+tabmat==4.2.1
+formulaic==1.2.2
+lightgbm==4.7.0
+model-diagnostics==1.4.2
+polars==1.44.2
+rdata==0.11.2
+pyarrow==25.0.1
+joblib==1.6.0
+matplotlib==3.10.9
+gradio==6.28.0
+
+# development
+pytest==9.1.1
+pytest-cov==7.1.0
+ruff==0.16.9
+statsmodels==0.15.0

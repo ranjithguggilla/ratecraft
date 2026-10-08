@@ -1,0 +1,32 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.env
+
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+.DS_Store
+.idea/
+.vscode/
+
+# The source data is GPL-licensed and downloaded on demand, never committed.
+data/raw/
+data/interim/
+
+# Rebuilt by scripts/run_all.py; CI uploads it as an artifact instead.
+results/model.joblib
+
+# Gradio's local cache
+.gradio/
+
+# local release helper, kept next to the repo rather than in it
+publish.sh
