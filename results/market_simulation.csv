@@ -1,0 +1,9 @@
+matchup,scenario,insurer,share_of_customers,earned_policy_years,premium,claims,loss_ratio,combined_ratio,underwriting_result,result_per_book
+Flat rate vs GLM with interactions,cheapest quote wins,Flat rate,0.351942,21328.1,3.96954e+06,5.42745e+06,1.36727,1.61727,-2.45029e+06,-1.14886e+07
+Flat rate vs GLM with interactions,cheapest quote wins,GLM with interactions,0.648058,50288.5,6.28386e+06,4.07804e+06,0.648971,0.898971,634850,1.26242e+06
+Flat rate vs GLM with interactions,"logit demand, elasticity 4",Flat rate,0.415245,26700.1,4.96938e+06,5.54509e+06,1.11585,1.36585,-1.81806e+06,-6.80918e+06
+Flat rate vs GLM with interactions,"logit demand, elasticity 4",GLM with interactions,0.584755,44916.4,5.9054e+06,3.9604e+06,0.67064,0.92064,468650,1.04338e+06
+GLM with interactions vs Boosted frequency x severity,cheapest quote wins,GLM with interactions,0.482523,33552.8,5.99101e+06,4.89296e+06,0.816718,1.06672,-399708,-1.19128e+06
+GLM with interactions vs Boosted frequency x severity,cheapest quote wins,Boosted frequency x severity,0.517477,38063.7,6.17269e+06,4.61253e+06,0.747247,0.997247,16992.3,44641.8
+GLM with interactions vs Boosted frequency x severity,"logit demand, elasticity 4",GLM with interactions,0.494771,35063.3,6.39297e+06,4.83098e+06,0.75567,1.00567,-36249.2,-103382
+GLM with interactions vs Boosted frequency x severity,"logit demand, elasticity 4",Boosted frequency x severity,0.505229,36553.3,6.35985e+06,4.67451e+06,0.735004,0.985004,95373.4,260916

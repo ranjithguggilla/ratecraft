@@ -1,0 +1,1458 @@
+{
+  "data": {
+    "policies": 677991,
+    "claims": 26444,
+    "policies_with_claims": 24944,
+    "exposure_years_raw": 358482.84,
+    "exposure_years_capped": 358343.5,
+    "claim_frequency": 0.0738,
+    "exposure_over_cap": 1224,
+    "exposure_max": 2.01,
+    "exposure_below_one_month": 114792,
+    "policies_with_more_than_4_claims": 8,
+    "claims_on_those_policies": 71,
+    "risk_profiles": 528745,
+    "rows_sharing_a_profile": 257908,
+    "share_rows_sharing_a_profile": 0.3804,
+    "largest_profile": 22,
+    "consecutive_id_share_within_profiles": 0.4094,
+    "vehicle_age_over_30": 1116,
+    "driver_age_over_90": 401
+  },
+  "reconciliation": {
+    "claims_without_policy": 0,
+    "policies_counting_claims_with_no_amounts": 0,
+    "policies_with_amounts_but_zero_count": 0,
+    "policies_where_counts_disagree": 0,
+    "non_positive_amounts": 0
+  },
+  "severity_profile": {
+    "claims": 26444,
+    "total": 59909216.5,
+    "mean": 2265.51,
+    "median": 1172.0,
+    "quantiles": {
+      "0.9": 2767.6,
+      "0.99": 16451.22,
+      "0.995": 34376.96,
+      "0.999": 152223.24
+    },
+    "max": 4075400.56,
+    "top_1pct_share_of_cost": 0.3799,
+    "most_common_amounts": [
+      {
+        "amount": 1204.0,
+        "claims": 4792,
+        "share": 0.1812
+      },
+      {
+        "amount": 1128.12,
+        "claims": 3056,
+        "share": 0.1156
+      },
+      {
+        "amount": 1172.0,
+        "claims": 2071,
+        "share": 0.0783
+      }
+    ],
+    "share_between_1100_and_1300": 0.4401,
+    "threshold": 50000.0,
+    "claims_over_threshold": 88,
+    "excess_share_of_cost": 0.2256
+  },
+  "area_density_ranges": {
+    "A": {
+      "min": 1,
+      "max": 50
+    },
+    "B": {
+      "min": 50,
+      "max": 100
+    },
+    "C": {
+      "min": 100,
+      "max": 500
+    },
+    "D": {
+      "min": 500,
+      "max": 1993
+    },
+    "E": {
+      "min": 2001,
+      "max": 9850
+    },
+    "F": {
+      "min": 10008,
+      "max": 27000
+    }
+  },
+  "split": {
+    "train": 406817,
+    "valid": 135541,
+    "test": 135633,
+    "test_exposure_years": 71616.52,
+    "test_claims": 5248
+  },
+  "large_loss": {
+    "threshold": 50000.0,
+    "loading_on_train": 0.340827
+  },
+  "frequency_glm": {
+    "alpha": 1e-05,
+    "interactions": [
+      "drv_age x bonus_malus",
+      "bonus_malus x veh_brand"
+    ],
+    "valid_flat": 0.24757066,
+    "valid_main": 0.235382,
+    "min_gain": 0.00012189,
+    "alpha_scores": [
+      {
+        "alpha": 1e-06,
+        "deviance": 0.23538878
+      },
+      {
+        "alpha": 1e-05,
+        "deviance": 0.235382
+      },
+      {
+        "alpha": 0.0001,
+        "deviance": 0.23551451
+      },
+      {
+        "alpha": 0.001,
+        "deviance": 0.23735475
+      }
+    ]
+  },
+  "frequency_gbm": {
+    "rounds": 307,
+    "params": {
+      "num_leaves": 31,
+      "min_data_in_leaf": 1000
+    },
+    "balance_scale": 0.995842
+  },
+  "severity_models": {
+    "alpha": 0.1,
+    "flat_mean_capped_claim": 1743.64,
+    "valid_deviance": {
+      "flat": 1.20187338,
+      "glm": 1.19923513,
+      "gbm": 1.1956237
+    },
+    "alpha_scores": [
+      {
+        "alpha": 0.0001,
+        "deviance": 1.20401149
+      },
+      {
+        "alpha": 0.001,
+        "deviance": 1.20308678
+      },
+      {
+        "alpha": 0.01,
+        "deviance": 1.20035086
+      },
+      {
+        "alpha": 0.1,
+        "deviance": 1.19923513
+      },
+      {
+        "alpha": 1.0,
+        "deviance": 1.20076005
+      }
+    ]
+  },
+  "tweedie": {
+    "power": 1.35,
+    "gbm_balance_scale": 1.048266
+  },
+  "frequency_models": [
+    {
+      "model": "Flat rate",
+      "poisson_deviance": 0.250403,
+      "improvement": 0.0,
+      "gini": 0.0,
+      "balance": 1.019647
+    },
+    {
+      "model": "GLM, main effects",
+      "poisson_deviance": 0.238627,
+      "improvement": 0.047029,
+      "gini": 0.293498,
+      "balance": 1.01918
+    },
+    {
+      "model": "GLM with interactions",
+      "poisson_deviance": 0.237711,
+      "improvement": 0.050687,
+      "gini": 0.301228,
+      "balance": 1.018877
+    },
+    {
+      "model": "Boosted",
+      "poisson_deviance": 0.236298,
+      "improvement": 0.056328,
+      "gini": 0.315172,
+      "balance": 1.019413
+    }
+  ],
+  "severity_models_test": [
+    {
+      "model": "Flat rate",
+      "gamma_deviance": 1.22422,
+      "improvement": 0.0,
+      "gini": 0.0,
+      "claims": 5248
+    },
+    {
+      "model": "GLM",
+      "gamma_deviance": 1.220735,
+      "improvement": 0.002847,
+      "gini": 0.04491,
+      "claims": 5248
+    },
+    {
+      "model": "Boosted",
+      "gamma_deviance": 1.218993,
+      "improvement": 0.00427,
+      "gini": 0.04725,
+      "claims": 5248
+    }
+  ],
+  "pure_premium_models": {
+    "Flat rate": {
+      "valid_deviance": 73.61669,
+      "valid_improvement": 0.0,
+      "test_deviance": 76.145345,
+      "test_improvement": 0.0,
+      "gini_attritional": 0.0,
+      "gini_total": 0.0,
+      "balance_attritional": 0.981581,
+      "balance_total": 1.017077,
+      "miscalibration": 0.003982,
+      "discrimination": -0.0,
+      "uncertainty": 76.141363,
+      "shipped": false
+    },
+    "GLM tariff": {
+      "valid_deviance": 70.191813,
+      "valid_improvement": 0.046523,
+      "test_deviance": 71.843263,
+      "test_improvement": 0.056498,
+      "gini_attritional": 0.341439,
+      "gini_total": 0.368303,
+      "balance_attritional": 0.977043,
+      "balance_total": 1.012375,
+      "miscalibration": 0.575263,
+      "discrimination": 4.873364,
+      "uncertainty": 76.141363,
+      "shipped": false
+    },
+    "Tweedie GLM": {
+      "valid_deviance": 70.305093,
+      "valid_improvement": 0.044984,
+      "test_deviance": 71.959019,
+      "test_improvement": 0.054978,
+      "gini_attritional": 0.338587,
+      "gini_total": 0.368788,
+      "balance_attritional": 0.982338,
+      "balance_total": 1.017861,
+      "miscalibration": 0.583496,
+      "discrimination": 4.765839,
+      "uncertainty": 76.141363,
+      "shipped": false
+    },
+    "GLM with interactions": {
+      "valid_deviance": 69.984894,
+      "valid_improvement": 0.049334,
+      "test_deviance": 71.454225,
+      "test_improvement": 0.061607,
+      "gini_attritional": 0.351689,
+      "gini_total": 0.375632,
+      "balance_attritional": 0.976748,
+      "balance_total": 1.012069,
+      "miscalibration": 0.510008,
+      "discrimination": 5.197147,
+      "uncertainty": 76.141363,
+      "shipped": false
+    },
+    "Boosted frequency x severity": {
+      "valid_deviance": 69.627749,
+      "valid_improvement": 0.054185,
+      "test_deviance": 71.297906,
+      "test_improvement": 0.06366,
+      "gini_attritional": 0.3595,
+      "gini_total": 0.38343,
+      "balance_attritional": 0.981291,
+      "balance_total": 1.016776,
+      "miscalibration": 0.872219,
+      "discrimination": 5.715676,
+      "uncertainty": 76.141363,
+      "shipped": true
+    },
+    "Tweedie GBM": {
+      "valid_deviance": 69.666682,
+      "valid_improvement": 0.053656,
+      "test_deviance": 71.532202,
+      "test_improvement": 0.060583,
+      "gini_attritional": 0.348515,
+      "gini_total": 0.367136,
+      "balance_attritional": 0.98204,
+      "balance_total": 1.017552,
+      "miscalibration": 0.794058,
+      "discrimination": 5.40322,
+      "uncertainty": 76.141363,
+      "shipped": false
+    }
+  },
+  "selection": {
+    "shipped": "Boosted frequency x severity",
+    "best_glm": "GLM with interactions",
+    "challenger": "Boosted frequency x severity",
+    "ship_margin": 0.05,
+    "decisions": [
+      {
+        "incumbent": "GLM tariff",
+        "challenger": "GLM with interactions",
+        "incumbent_lift": 3.42487634,
+        "challenger_lift": 3.63179535,
+        "needed": 3.59612016,
+        "extra_lift": 0.0604,
+        "promoted": true
+      },
+      {
+        "incumbent": "GLM with interactions",
+        "challenger": "Boosted frequency x severity",
+        "incumbent_lift": 3.63179535,
+        "challenger_lift": 3.98894064,
+        "needed": 3.81338512,
+        "extra_lift": 0.0983,
+        "promoted": true
+      }
+    ]
+  },
+  "bootstrap": {
+    "a": "Boosted frequency x severity",
+    "b": "GLM with interactions",
+    "replicates": 200,
+    "improvement_gap": 0.002053,
+    "ci_low": -0.001454,
+    "ci_high": 0.00547,
+    "share_a_better": 0.885
+  },
+  "bias_levels_p_below_0_01": {
+    "Boosted frequency x severity": {
+      "significant": 1,
+      "levels": 52
+    },
+    "GLM with interactions": {
+      "significant": 1,
+      "levels": 52
+    }
+  },
+  "large_loss_sensitivity": [
+    {
+      "threshold": "25,000",
+      "loading": 0.42925,
+      "train_claims_over_threshold": 102,
+      "test_gini_total_cost": 0.371566,
+      "test_balance_total_cost": 1.013576
+    },
+    {
+      "threshold": "50,000",
+      "loading": 0.340827,
+      "train_claims_over_threshold": 50,
+      "test_gini_total_cost": 0.368303,
+      "test_balance_total_cost": 1.012375
+    },
+    {
+      "threshold": "100,000",
+      "loading": 0.265578,
+      "train_claims_over_threshold": 24,
+      "test_gini_total_cost": 0.36261,
+      "test_balance_total_cost": 1.008976
+    },
+    {
+      "threshold": "none",
+      "loading": 0.0,
+      "train_claims_over_threshold": 0,
+      "test_gini_total_cost": 0.334706,
+      "test_balance_total_cost": 0.928042
+    }
+  ],
+  "relativities_frequency": [
+    {
+      "factor": "drv_age",
+      "level": "18-20",
+      "coef": 0.165713,
+      "se": 0.057814,
+      "relativity": 1.180234,
+      "ci_low": 1.053796,
+      "ci_high": 1.321843,
+      "p_value": 0.004153
+    },
+    {
+      "factor": "drv_age",
+      "level": "21-25",
+      "coef": -0.311188,
+      "se": 0.039023,
+      "relativity": 0.732576,
+      "ci_low": 0.678635,
+      "ci_high": 0.790804,
+      "p_value": 0.0
+    },
+    {
+      "factor": "drv_age",
+      "level": "26-30",
+      "coef": -0.570182,
+      "se": 0.033289,
+      "relativity": 0.565423,
+      "ci_low": 0.529709,
+      "ci_high": 0.603544,
+      "p_value": 0.0
+    },
+    {
+      "factor": "drv_age",
+      "level": "31-40",
+      "coef": -0.360717,
+      "se": 0.024237,
+      "relativity": 0.697176,
+      "ci_low": 0.664832,
+      "ci_high": 0.731094,
+      "p_value": 0.0
+    },
+    {
+      "factor": "drv_age",
+      "level": "51-60",
+      "coef": -0.02627,
+      "se": 0.025453,
+      "relativity": 0.974072,
+      "ci_low": 0.92667,
+      "ci_high": 1.023899,
+      "p_value": 0.302034
+    },
+    {
+      "factor": "drv_age",
+      "level": "61-70",
+      "coef": -0.06879,
+      "se": 0.031588,
+      "relativity": 0.933523,
+      "ci_low": 0.877481,
+      "ci_high": 0.993144,
+      "p_value": 0.029425
+    },
+    {
+      "factor": "drv_age",
+      "level": "71-80",
+      "coef": -0.05239,
+      "se": 0.040645,
+      "relativity": 0.948958,
+      "ci_low": 0.876295,
+      "ci_high": 1.027647,
+      "p_value": 0.197404
+    },
+    {
+      "factor": "drv_age",
+      "level": "81+",
+      "coef": 0.020564,
+      "se": 0.078951,
+      "relativity": 1.020777,
+      "ci_low": 0.874436,
+      "ci_high": 1.191609,
+      "p_value": 0.794505
+    },
+    {
+      "factor": "veh_age",
+      "level": "0",
+      "coef": -0.022857,
+      "se": 0.043229,
+      "relativity": 0.977402,
+      "ci_low": 0.898,
+      "ci_high": 1.063824,
+      "p_value": 0.59698
+    },
+    {
+      "factor": "veh_age",
+      "level": "1",
+      "coef": -0.033242,
+      "se": 0.033607,
+      "relativity": 0.967305,
+      "ci_low": 0.905643,
+      "ci_high": 1.033165,
+      "p_value": 0.322602
+    },
+    {
+      "factor": "veh_age",
+      "level": "2-4",
+      "coef": 0.005684,
+      "se": 0.023322,
+      "relativity": 1.0057,
+      "ci_low": 0.960764,
+      "ci_high": 1.052738,
+      "p_value": 0.807451
+    },
+    {
+      "factor": "veh_age",
+      "level": "10-14",
+      "coef": -0.076771,
+      "se": 0.022519,
+      "relativity": 0.926102,
+      "ci_low": 0.886116,
+      "ci_high": 0.967892,
+      "p_value": 0.000652
+    },
+    {
+      "factor": "veh_age",
+      "level": "15-19",
+      "coef": -0.333361,
+      "se": 0.03234,
+      "relativity": 0.716512,
+      "ci_low": 0.672505,
+      "ci_high": 0.763398,
+      "p_value": 0.0
+    },
+    {
+      "factor": "veh_age",
+      "level": "20+",
+      "coef": -0.598785,
+      "se": 0.078713,
+      "relativity": 0.549479,
+      "ci_low": 0.470923,
+      "ci_high": 0.641138,
+      "p_value": 0.0
+    },
+    {
+      "factor": "veh_power",
+      "level": "4",
+      "coef": -0.03748,
+      "se": 0.030032,
+      "relativity": 0.963214,
+      "ci_low": 0.908154,
+      "ci_high": 1.021611,
+      "p_value": 0.212026
+    },
+    {
+      "factor": "veh_power",
+      "level": "5",
+      "coef": -0.021073,
+      "se": 0.025396,
+      "relativity": 0.979147,
+      "ci_low": 0.931603,
+      "ci_high": 1.029118,
+      "p_value": 0.406659
+    },
+    {
+      "factor": "veh_power",
+      "level": "7",
+      "coef": 0.014393,
+      "se": 0.024746,
+      "relativity": 1.014498,
+      "ci_low": 0.966467,
+      "ci_high": 1.064915,
+      "p_value": 0.560807
+    },
+    {
+      "factor": "veh_power",
+      "level": "8",
+      "coef": 0.053143,
+      "se": 0.036734,
+      "relativity": 1.05458,
+      "ci_low": 0.981321,
+      "ci_high": 1.133308,
+      "p_value": 0.14799
+    },
+    {
+      "factor": "veh_power",
+      "level": "9",
+      "coef": 0.169027,
+      "se": 0.042683,
+      "relativity": 1.184153,
+      "ci_low": 1.089121,
+      "ci_high": 1.287476,
+      "p_value": 7.5e-05
+    },
+    {
+      "factor": "veh_power",
+      "level": "10",
+      "coef": 0.15628,
+      "se": 0.042908,
+      "relativity": 1.169154,
+      "ci_low": 1.074852,
+      "ci_high": 1.271729,
+      "p_value": 0.00027
+    },
+    {
+      "factor": "veh_power",
+      "level": "11",
+      "coef": 0.237424,
+      "se": 0.054602,
+      "relativity": 1.267978,
+      "ci_low": 1.139291,
+      "ci_high": 1.411201,
+      "p_value": 1.4e-05
+    },
+    {
+      "factor": "veh_power",
+      "level": "12+",
+      "coef": 0.164409,
+      "se": 0.059203,
+      "relativity": 1.178697,
+      "ci_low": 1.049563,
+      "ci_high": 1.323718,
+      "p_value": 0.005485
+    },
+    {
+      "factor": "bonus_malus",
+      "level": "51-57",
+      "coef": 0.369156,
+      "se": 0.031224,
+      "relativity": 1.446513,
+      "ci_low": 1.360645,
+      "ci_high": 1.537801,
+      "p_value": 0.0
+    },
+    {
+      "factor": "bonus_malus",
+      "level": "58-64",
+      "coef": 0.896681,
+      "se": 0.02814,
+      "relativity": 2.451453,
+      "ci_low": 2.319906,
+      "ci_high": 2.590459,
+      "p_value": 0.0
+    },
+    {
+      "factor": "bonus_malus",
+      "level": "65-79",
+      "coef": 0.8801,
+      "se": 0.028844,
+      "relativity": 2.411141,
+      "ci_low": 2.278613,
+      "ci_high": 2.551378,
+      "p_value": 0.0
+    },
+    {
+      "factor": "bonus_malus",
+      "level": "80-99",
+      "coef": 1.00482,
+      "se": 0.02961,
+      "relativity": 2.731415,
+      "ci_low": 2.577413,
+      "ci_high": 2.894619,
+      "p_value": 0.0
+    },
+    {
+      "factor": "bonus_malus",
+      "level": "100-125",
+      "coef": 1.717167,
+      "se": 0.033892,
+      "relativity": 5.56873,
+      "ci_low": 5.210834,
+      "ci_high": 5.951207,
+      "p_value": 0.0
+    },
+    {
+      "factor": "bonus_malus",
+      "level": "126+",
+      "coef": 2.066795,
+      "se": 0.113587,
+      "relativity": 7.899463,
+      "ci_low": 6.322841,
+      "ci_high": 9.869221,
+      "p_value": 0.0
+    },
+    {
+      "factor": "veh_brand",
+      "level": "B1",
+      "coef": 0.258554,
+      "se": 0.03165,
+      "relativity": 1.295056,
+      "ci_low": 1.217162,
+      "ci_high": 1.377935,
+      "p_value": 0.0
+    },
+    {
+      "factor": "veh_brand",
+      "level": "B10",
+      "coef": 0.177872,
+      "se": 0.05578,
+      "relativity": 1.194672,
+      "ci_low": 1.070949,
+      "ci_high": 1.332689,
+      "p_value": 0.001429
+    },
+    {
+      "factor": "veh_brand",
+      "level": "B11",
+      "coef": 0.393106,
+      "se": 0.057644,
+      "relativity": 1.481575,
+      "ci_low": 1.323297,
+      "ci_high": 1.658786,
+      "p_value": 0.0
+    },
+    {
+      "factor": "veh_brand",
+      "level": "B13",
+      "coef": 0.249707,
+      "se": 0.062727,
+      "relativity": 1.28365,
+      "ci_low": 1.135149,
+      "ci_high": 1.451577,
+      "p_value": 6.9e-05
+    },
+    {
+      "factor": "veh_brand",
+      "level": "B14",
+      "coef": -0.075026,
+      "se": 0.124448,
+      "relativity": 0.927719,
+      "ci_low": 0.726919,
+      "ci_high": 1.183986,
+      "p_value": 0.546592
+    },
+    {
+      "factor": "veh_brand",
+      "level": "B2",
+      "coef": 0.23258,
+      "se": 0.030916,
+      "relativity": 1.261852,
+      "ci_low": 1.18766,
+      "ci_high": 1.340678,
+      "p_value": 0.0
+    },
+    {
+      "factor": "veh_brand",
+      "level": "B3",
+      "coef": 0.304855,
+      "se": 0.036745,
+      "relativity": 1.356428,
+      "ci_low": 1.262173,
+      "ci_high": 1.457722,
+      "p_value": 0.0
+    },
+    {
+      "factor": "veh_brand",
+      "level": "B4",
+      "coef": 0.252915,
+      "se": 0.047245,
+      "relativity": 1.287774,
+      "ci_low": 1.173883,
+      "ci_high": 1.412715,
+      "p_value": 0.0
+    },
+    {
+      "factor": "veh_brand",
+      "level": "B5",
+      "coef": 0.29835,
+      "se": 0.04166,
+      "relativity": 1.347634,
+      "ci_low": 1.241969,
+      "ci_high": 1.462288,
+      "p_value": 0.0
+    },
+    {
+      "factor": "veh_brand",
+      "level": "B6",
+      "coef": 0.281378,
+      "se": 0.044704,
+      "relativity": 1.324955,
+      "ci_low": 1.213806,
+      "ci_high": 1.446282,
+      "p_value": 0.0
+    },
+    {
+      "factor": "veh_gas",
+      "level": "Diesel",
+      "coef": 0.178294,
+      "se": 0.017719,
+      "relativity": 1.195177,
+      "ci_low": 1.154383,
+      "ci_high": 1.237413,
+      "p_value": 0.0
+    },
+    {
+      "factor": "region",
+      "level": "Alsace",
+      "coef": 0.005674,
+      "se": 0.141872,
+      "relativity": 1.00569,
+      "ci_low": 0.761556,
+      "ci_high": 1.328085,
+      "p_value": 0.9681
+    },
+    {
+      "factor": "region",
+      "level": "Aquitaine",
+      "coef": 0.05062,
+      "se": 0.045043,
+      "relativity": 1.051923,
+      "ci_low": 0.963038,
+      "ci_high": 1.149011,
+      "p_value": 0.26109
+    },
+    {
+      "factor": "region",
+      "level": "Auvergne",
+      "coef": -0.109588,
+      "se": 0.113041,
+      "relativity": 0.896203,
+      "ci_low": 0.718101,
+      "ci_high": 1.118478,
+      "p_value": 0.332321
+    },
+    {
+      "factor": "region",
+      "level": "Basse-Normandie",
+      "coef": -0.014188,
+      "se": 0.06246,
+      "relativity": 0.985912,
+      "ci_low": 0.872312,
+      "ci_high": 1.114306,
+      "p_value": 0.820302
+    },
+    {
+      "factor": "region",
+      "level": "Bourgogne",
+      "coef": 0.096477,
+      "se": 0.069346,
+      "relativity": 1.101284,
+      "ci_low": 0.961328,
+      "ci_high": 1.261615,
+      "p_value": 0.164156
+    },
+    {
+      "factor": "region",
+      "level": "Bretagne",
+      "coef": -0.016493,
+      "se": 0.034385,
+      "relativity": 0.983643,
+      "ci_low": 0.919536,
+      "ci_high": 1.052219,
+      "p_value": 0.631483
+    },
+    {
+      "factor": "region",
+      "level": "Champagne-Ardenne",
+      "coef": -0.25346,
+      "se": 0.168618,
+      "relativity": 0.776111,
+      "ci_low": 0.557694,
+      "ci_high": 1.08007,
+      "p_value": 0.132798
+    },
+    {
+      "factor": "region",
+      "level": "Corse",
+      "coef": 0.156899,
+      "se": 0.130639,
+      "relativity": 1.169877,
+      "ci_low": 0.905608,
+      "ci_high": 1.511263,
+      "p_value": 0.229746
+    },
+    {
+      "factor": "region",
+      "level": "Franche-Comte",
+      "coef": 0.0187,
+      "se": 0.20808,
+      "relativity": 1.018876,
+      "ci_low": 0.677646,
+      "ci_high": 1.531933,
+      "p_value": 0.92839
+    },
+    {
+      "factor": "region",
+      "level": "Haute-Normandie",
+      "coef": 0.009113,
+      "se": 0.088104,
+      "relativity": 1.009154,
+      "ci_low": 0.849109,
+      "ci_high": 1.199366,
+      "p_value": 0.917622
+    },
+    {
+      "factor": "region",
+      "level": "Ile-de-France",
+      "coef": -0.066345,
+      "se": 0.037541,
+      "relativity": 0.935808,
+      "ci_low": 0.869425,
+      "ci_high": 1.00726,
+      "p_value": 0.077181
+    },
+    {
+      "factor": "region",
+      "level": "Languedoc-Roussillon",
+      "coef": 0.038864,
+      "se": 0.058731,
+      "relativity": 1.039629,
+      "ci_low": 0.926587,
+      "ci_high": 1.166462,
+      "p_value": 0.508152
+    },
+    {
+      "factor": "region",
+      "level": "Limousin",
+      "coef": 0.197693,
+      "se": 0.100526,
+      "relativity": 1.218588,
+      "ci_low": 1.000666,
+      "ci_high": 1.483968,
+      "p_value": 0.049231
+    },
+    {
+      "factor": "region",
+      "level": "Lorraine",
+      "coef": -0.190889,
+      "se": 0.065363,
+      "relativity": 0.826224,
+      "ci_low": 0.726877,
+      "ci_high": 0.939149,
+      "p_value": 0.003495
+    },
+    {
+      "factor": "region",
+      "level": "Midi-Pyrenees",
+      "coef": -0.263172,
+      "se": 0.071891,
+      "relativity": 0.76861,
+      "ci_low": 0.667594,
+      "ci_high": 0.884911,
+      "p_value": 0.000252
+    },
+    {
+      "factor": "region",
+      "level": "Nord-Pas-de-Calais",
+      "coef": -0.029317,
+      "se": 0.048564,
+      "relativity": 0.971108,
+      "ci_low": 0.882937,
+      "ci_high": 1.068085,
+      "p_value": 0.546057
+    },
+    {
+      "factor": "region",
+      "level": "Pays-de-la-Loire",
+      "coef": 0.019493,
+      "se": 0.037003,
+      "relativity": 1.019684,
+      "ci_low": 0.948351,
+      "ci_high": 1.096384,
+      "p_value": 0.59833
+    },
+    {
+      "factor": "region",
+      "level": "Picardie",
+      "coef": 0.196852,
+      "se": 0.07319,
+      "relativity": 1.217564,
+      "ci_low": 1.054853,
+      "ci_high": 1.405372,
+      "p_value": 0.007154
+    },
+    {
+      "factor": "region",
+      "level": "Poitou-Charentes",
+      "coef": 0.058614,
+      "se": 0.048738,
+      "relativity": 1.060366,
+      "ci_low": 0.963763,
+      "ci_high": 1.166652,
+      "p_value": 0.229116
+    },
+    {
+      "factor": "region",
+      "level": "Provence-Alpes-Cotes-D'Azur",
+      "coef": 0.097387,
+      "se": 0.031673,
+      "relativity": 1.102286,
+      "ci_low": 1.035939,
+      "ci_high": 1.172883,
+      "p_value": 0.002107
+    },
+    {
+      "factor": "region",
+      "level": "Rhone-Alpes",
+      "coef": 0.185783,
+      "se": 0.027654,
+      "relativity": 1.20416,
+      "ci_low": 1.140632,
+      "ci_high": 1.271227,
+      "p_value": 0.0
+    }
+  ],
+  "market": [
+    {
+      "matchup": "Flat rate vs GLM with interactions",
+      "scenario": "cheapest quote wins",
+      "insurer": "Flat rate",
+      "share_of_customers": 0.351942,
+      "earned_policy_years": 21328.058429,
+      "premium": 3969544.974834,
+      "claims": 5427447.48,
+      "loss_ratio": 1.367272,
+      "combined_ratio": 1.617272,
+      "underwriting_result": -2450288.748875,
+      "result_per_book": -11488569.187194
+    },
+    {
+      "matchup": "Flat rate vs GLM with interactions",
+      "scenario": "cheapest quote wins",
+      "insurer": "GLM with interactions",
+      "share_of_customers": 0.648058,
+      "earned_policy_years": 50288.462051,
+      "premium": 6283858.642,
+      "claims": 4078043.49,
+      "loss_ratio": 0.648971,
+      "combined_ratio": 0.898971,
+      "underwriting_result": 634850.4915,
+      "result_per_book": 1262417.790498
+    },
+    {
+      "matchup": "Flat rate vs GLM with interactions",
+      "scenario": "logit demand, elasticity 4",
+      "insurer": "Flat rate",
+      "share_of_customers": 0.415245,
+      "earned_policy_years": 26700.084975,
+      "premium": 4969378.178169,
+      "claims": 5545090.1354,
+      "loss_ratio": 1.115852,
+      "combined_ratio": 1.365852,
+      "underwriting_result": -1818056.501773,
+      "result_per_book": -6809178.710482
+    },
+    {
+      "matchup": "Flat rate vs GLM with interactions",
+      "scenario": "logit demand, elasticity 4",
+      "insurer": "GLM with interactions",
+      "share_of_customers": 0.584755,
+      "earned_policy_years": 44916.435505,
+      "premium": 5905400.800504,
+      "claims": 3960400.8346,
+      "loss_ratio": 0.67064,
+      "combined_ratio": 0.92064,
+      "underwriting_result": 468649.765778,
+      "result_per_book": 1043381.47163
+    },
+    {
+      "matchup": "GLM with interactions vs Boosted frequency x severity",
+      "scenario": "cheapest quote wins",
+      "insurer": "GLM with interactions",
+      "share_of_customers": 0.482523,
+      "earned_policy_years": 33552.785681,
+      "premium": 5991005.772689,
+      "claims": 4892962.5,
+      "loss_ratio": 0.816718,
+      "combined_ratio": 1.066718,
+      "underwriting_result": -399708.170483,
+      "result_per_book": -1191281.624977
+    },
+    {
+      "matchup": "GLM with interactions vs Boosted frequency x severity",
+      "scenario": "cheapest quote wins",
+      "insurer": "Boosted frequency x severity",
+      "share_of_customers": 0.517477,
+      "earned_policy_years": 38063.734799,
+      "premium": 6172694.388091,
+      "claims": 4612528.47,
+      "loss_ratio": 0.747247,
+      "combined_ratio": 0.997247,
+      "underwriting_result": 16992.321068,
+      "result_per_book": 44641.759822
+    },
+    {
+      "matchup": "GLM with interactions vs Boosted frequency x severity",
+      "scenario": "logit demand, elasticity 4",
+      "insurer": "GLM with interactions",
+      "share_of_customers": 0.494771,
+      "earned_policy_years": 35063.260562,
+      "premium": 6392969.124412,
+      "claims": 4830976.027442,
+      "loss_ratio": 0.75567,
+      "combined_ratio": 1.00567,
+      "underwriting_result": -36249.184133,
+      "result_per_book": -103382.239849
+    },
+    {
+      "matchup": "GLM with interactions vs Boosted frequency x severity",
+      "scenario": "logit demand, elasticity 4",
+      "insurer": "Boosted frequency x severity",
+      "share_of_customers": 0.505229,
+      "earned_policy_years": 36553.259918,
+      "premium": 6359851.108637,
+      "claims": 4674514.942558,
+      "loss_ratio": 0.735004,
+      "combined_ratio": 0.985004,
+      "underwriting_result": 95373.38892,
+      "result_per_book": 260916.23328
+    }
+  ],
+  "split_leakage": {
+    "grouped": {
+      "glm_mean": 0.048546,
+      "glm_sd": 0.001598,
+      "gbm_mean": 0.057505,
+      "gbm_sd": 0.002412
+    },
+    "random": {
+      "glm_mean": 0.046204,
+      "glm_sd": 0.001544,
+      "gbm_mean": 0.056706,
+      "gbm_sd": 0.001832
+    },
+    "seeds": 5,
+    "random_split_test_rows_with_profile_in_train": 0.3262
+  },
+  "exposure": {
+    "summary": {
+      "offset": {
+        "test_deviance": 0.238627,
+        "balance": 1.01918,
+        "mean_full_year_rate": 0.080157
+      },
+      "annualised, unweighted": {
+        "test_deviance": 0.251309,
+        "balance": 1.584624,
+        "mean_full_year_rate": 0.121531
+      },
+      "offset + duration factor": {
+        "test_deviance": 0.237093,
+        "balance": 1.019863,
+        "mean_full_year_rate": 0.061009
+      }
+    },
+    "frequency_by_duration": [
+      {
+        "duration": "under 1 month",
+        "policies": 114792,
+        "exposure": 6317.415463,
+        "claims": 1043.0,
+        "claims_per_year": 0.165099
+      },
+      {
+        "duration": "1-3 months",
+        "policies": 108018,
+        "exposure": 18647.23,
+        "claims": 2393.0,
+        "claims_per_year": 0.12833
+      },
+      {
+        "duration": "3-6 months",
+        "policies": 131299,
+        "exposure": 51387.73,
+        "claims": 4987.0,
+        "claims_per_year": 0.097047
+      },
+      {
+        "duration": "6-9 months",
+        "policies": 92491,
+        "exposure": 58572.66,
+        "claims": 4714.0,
+        "claims_per_year": 0.080481
+      },
+      {
+        "duration": "9-12 months",
+        "policies": 62051,
+        "exposure": 54078.46,
+        "claims": 4037.0,
+        "claims_per_year": 0.074651
+      },
+      {
+        "duration": "full year",
+        "policies": 169340,
+        "exposure": 169340.0,
+        "claims": 9270.0,
+        "claims_per_year": 0.054742
+      }
+    ],
+    "a_over_e": [
+      {
+        "model": "offset",
+        "duration": "under 1 month",
+        "a_over_e": 1.7174
+      },
+      {
+        "model": "offset",
+        "duration": "1-3 months",
+        "a_over_e": 1.428
+      },
+      {
+        "model": "offset",
+        "duration": "3-6 months",
+        "a_over_e": 1.1186
+      },
+      {
+        "model": "offset",
+        "duration": "6-9 months",
+        "a_over_e": 0.9584
+      },
+      {
+        "model": "offset",
+        "duration": "9-12 months",
+        "a_over_e": 0.9528
+      },
+      {
+        "model": "offset",
+        "duration": "full year",
+        "a_over_e": 0.8458
+      },
+      {
+        "model": "annualised, unweighted",
+        "duration": "under 1 month",
+        "a_over_e": 1.1966
+      },
+      {
+        "model": "annualised, unweighted",
+        "duration": "1-3 months",
+        "a_over_e": 0.9472
+      },
+      {
+        "model": "annualised, unweighted",
+        "duration": "3-6 months",
+        "a_over_e": 0.7543
+      },
+      {
+        "model": "annualised, unweighted",
+        "duration": "6-9 months",
+        "a_over_e": 0.639
+      },
+      {
+        "model": "annualised, unweighted",
+        "duration": "9-12 months",
+        "a_over_e": 0.6246
+      },
+      {
+        "model": "annualised, unweighted",
+        "duration": "full year",
+        "a_over_e": 0.5191
+      },
+      {
+        "model": "offset + duration factor",
+        "duration": "under 1 month",
+        "a_over_e": 0.8952
+      },
+      {
+        "model": "offset + duration factor",
+        "duration": "1-3 months",
+        "a_over_e": 0.9294
+      },
+      {
+        "model": "offset + duration factor",
+        "duration": "3-6 months",
+        "a_over_e": 0.9864
+      },
+      {
+        "model": "offset + duration factor",
+        "duration": "6-9 months",
+        "a_over_e": 0.9246
+      },
+      {
+        "model": "offset + duration factor",
+        "duration": "9-12 months",
+        "a_over_e": 0.9882
+      },
+      {
+        "model": "offset + duration factor",
+        "duration": "full year",
+        "a_over_e": 1.0275
+      }
+    ],
+    "duration_relativities": [
+      {
+        "level": "under 1 month",
+        "relativity": 2.6045,
+        "ci_low": 2.3489,
+        "ci_high": 2.8879
+      },
+      {
+        "level": "1-3 months",
+        "relativity": 2.0659,
+        "ci_low": 1.9406,
+        "ci_high": 2.1992
+      },
+      {
+        "level": "3-6 months",
+        "relativity": 1.5181,
+        "ci_low": 1.4415,
+        "ci_high": 1.5986
+      },
+      {
+        "level": "6-9 months",
+        "relativity": 1.3807,
+        "ci_low": 1.313,
+        "ci_high": 1.4518
+      },
+      {
+        "level": "9-12 months",
+        "relativity": 1.2614,
+        "ci_low": 1.1984,
+        "ci_high": 1.3276
+      }
+    ]
+  },
+  "demo_quotes": {
+    "new driver, city, powerful car": {
+      "shipped": {
+        "frequency": 0.190669,
+        "severity": 1858.28,
+        "technical": 475.08,
+        "office": 678.68,
+        "reasons": [
+          "Bonus-malus level 100: 198% dearer than an average policy",
+          "Vehicle brand B12: 23% cheaper than an average policy",
+          "Vehicle power band 9: 15% dearer than an average policy",
+          "Driver age 19: 13% dearer than an average policy"
+        ]
+      },
+      "reference": {
+        "frequency": 0.270948,
+        "severity": 1854.97,
+        "technical": 673.9,
+        "office": 962.72,
+        "reasons": [
+          "Driver age 19: 101% dearer than an average policy",
+          "Bonus-malus level 100: 93% dearer than an average policy",
+          "Population density 9,000 people per km2: 23% dearer than an average policy",
+          "Vehicle power band 9: 17% dearer than an average policy"
+        ]
+      }
+    },
+    "experienced driver, small town": {
+      "shipped": {
+        "frequency": 0.059406,
+        "severity": 1669.12,
+        "technical": 132.95,
+        "office": 189.93,
+        "reasons": [
+          "Bonus-malus level 50: 34% cheaper than an average policy",
+          "Driver age 47: 19% dearer than an average policy",
+          "Region Bretagne: 8% cheaper than an average policy",
+          "Fuel Diesel: 9% dearer than an average policy"
+        ]
+      },
+      "reference": {
+        "frequency": 0.063817,
+        "severity": 1752.04,
+        "technical": 149.92,
+        "office": 214.17,
+        "reasons": [
+          "Bonus-malus level 50: 20% cheaper than an average policy",
+          "Driver age 47: 18% dearer than an average policy",
+          "Fuel Diesel: 9% dearer than an average policy",
+          "Vehicle age 6: 8% dearer than an average policy"
+        ]
+      }
+    },
+    "driver with a claims record": {
+      "shipped": {
+        "frequency": 0.154014,
+        "severity": 1921.45,
+        "technical": 396.79,
+        "office": 566.85,
+        "reasons": [
+          "Bonus-malus level 95: 112% dearer than an average policy",
+          "Population density 2,500 people per km2: 13% dearer than an average policy",
+          "Driver age 35: 10% cheaper than an average policy",
+          "Fuel Diesel: 6% dearer than an average policy"
+        ]
+      },
+      "reference": {
+        "frequency": 0.157663,
+        "severity": 1811.68,
+        "technical": 382.99,
+        "office": 547.13,
+        "reasons": [
+          "Bonus-malus level 95: 86% dearer than an average policy",
+          "Region Provence-Alpes-Cotes-D'Azur: 14% dearer than an average policy",
+          "Population density 2,500 people per km2: 14% dearer than an average policy",
+          "Vehicle brand B2: 11% dearer than an average policy"
+        ]
+      }
+    }
+  },
+  "costs": {
+    "target_loss_ratio": 0.7,
+    "expense_ratio": 0.25,
+    "price_elasticity": 4.0,
+    "book_policy_years": 100000.0
+  },
+  "stage_seconds": {
+    "frequency_glm": 52.8,
+    "frequency_gbm": 16.2,
+    "severity": 0.4,
+    "direct": 7.7,
+    "studies": 28.4
+  },
+  "double_lift": {
+    "challenger": "Boosted frequency x severity",
+    "glm": "GLM with interactions",
+    "bands_where_challenger_is_closer": 8,
+    "bands": 10,
+    "bands_detail": [
+      {
+        "band": 1,
+        "actual_relative": 1.0912,
+        "a_relative": 0.8996,
+        "b_relative": 1.3034
+      },
+      {
+        "band": 2,
+        "actual_relative": 0.9388,
+        "a_relative": 0.852,
+        "b_relative": 1.051
+      },
+      {
+        "band": 3,
+        "actual_relative": 0.9896,
+        "a_relative": 0.8494,
+        "b_relative": 0.9773
+      },
+      {
+        "band": 4,
+        "actual_relative": 0.8066,
+        "a_relative": 0.8571,
+        "b_relative": 0.9358
+      },
+      {
+        "band": 5,
+        "actual_relative": 0.7597,
+        "a_relative": 0.8842,
+        "b_relative": 0.9221
+      },
+      {
+        "band": 6,
+        "actual_relative": 0.9067,
+        "a_relative": 0.9074,
+        "b_relative": 0.904
+      },
+      {
+        "band": 7,
+        "actual_relative": 0.8822,
+        "a_relative": 0.948,
+        "b_relative": 0.9004
+      },
+      {
+        "band": 8,
+        "actual_relative": 0.9908,
+        "a_relative": 1.0228,
+        "b_relative": 0.9195
+      },
+      {
+        "band": 9,
+        "actual_relative": 1.163,
+        "a_relative": 1.1351,
+        "b_relative": 0.9485
+      },
+      {
+        "band": 10,
+        "actual_relative": 1.4713,
+        "a_relative": 1.6444,
+        "b_relative": 1.138
+      }
+    ]
+  }
+}

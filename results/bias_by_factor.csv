@@ -1,0 +1,105 @@
+model,factor,level,bias_mean,bias_stderr,p_value,weight
+Boosted frequency x severity,drv_age,18-20,-215.299,225.459,0.339776,516.633
+Boosted frequency x severity,drv_age,21-25,-33.7072,152.176,0.824708,2755.97
+Boosted frequency x severity,drv_age,26-30,24.8109,19.3177,0.199038,5900.43
+Boosted frequency x severity,drv_age,31-40,-6.64987,19.5989,0.734388,16577.1
+Boosted frequency x severity,drv_age,41-50,9.28322,7.89841,0.239872,17654.3
+Boosted frequency x severity,drv_age,51-60,-6.73719,16.579,0.684474,15061.4
+Boosted frequency x severity,drv_age,61-70,9.25758,22.8251,0.685052,7692.31
+Boosted frequency x severity,drv_age,71-80,-41.0473,41.5611,0.323366,4538.37
+Boosted frequency x severity,drv_age,81+,46.509,18.6265,0.0126569,919.973
+Boosted frequency x severity,bonus_malus,100-125,-46.4111,141.559,0.743033,1847.76
+Boosted frequency x severity,bonus_malus,126+,-462.321,475.283,0.332166,72.4355
+Boosted frequency x severity,bonus_malus,50,4.67748,7.69035,0.543039,44988
+Boosted frequency x severity,bonus_malus,51-57,-43.7542,31.6527,0.166895,6997.49
+Boosted frequency x severity,bonus_malus,58-64,-21.9313,31.1427,0.48131,5395.38
+Boosted frequency x severity,bonus_malus,65-79,5.76819,34.6746,0.867883,6220.4
+Boosted frequency x severity,bonus_malus,80-99,19.6213,56.3101,0.727507,6095.08
+Boosted frequency x severity,veh_age,0,-30.3069,46.8656,0.517854,3247.07
+Boosted frequency x severity,veh_age,1,-16.7454,58.6589,0.775288,6496.78
+Boosted frequency x severity,veh_age,10-14,30.1643,10.5413,0.00421873,17142
+Boosted frequency x severity,veh_age,15-19,-18.4593,55.3797,0.738896,7199.39
+Boosted frequency x severity,veh_age,2-4,-17.201,13.3096,0.196237,15914.7
+Boosted frequency x severity,veh_age,20+,1.41698,15.0911,0.925201,1420.42
+Boosted frequency x severity,veh_age,5-9,-4.11395,12.9944,0.751553,20196.2
+Boosted frequency x severity,veh_power,10,7.44148,13.5573,0.5831,3022.36
+Boosted frequency x severity,veh_power,11,-49.2963,80.7093,0.541379,1647.32
+Boosted frequency x severity,veh_power,12+,-67.7911,43.535,0.11953,1530.19
+Boosted frequency x severity,veh_power,4,11.7119,17.6202,0.506256,12014.9
+Boosted frequency x severity,veh_power,5,-0.633764,21.0392,0.975969,13726.6
+Boosted frequency x severity,veh_power,6,-0.375508,26.291,0.988604,16487.8
+Boosted frequency x severity,veh_power,7,-11.7827,23.5789,0.617281,15632.8
+Boosted frequency x severity,veh_power,8,15.2347,13.9923,0.276275,4415.35
+Boosted frequency x severity,veh_power,9,-7.7368,50.5665,0.878401,3139.23
+Boosted frequency x severity,veh_brand,B1,15.6035,14.6556,0.287029,19042.6
+Boosted frequency x severity,veh_brand,B10,-111.153,50.305,0.0271985,1869.68
+Boosted frequency x severity,veh_brand,B11,27.8036,30.7005,0.365206,1358.2
+Boosted frequency x severity,veh_brand,B12,-3.70587,16.804,0.825456,12865.3
+Boosted frequency x severity,veh_brand,B2,-23.2615,31.3388,0.457937,18908
+Boosted frequency x severity,veh_brand,B3,12.827,16.748,0.443763,5809.61
+Boosted frequency x severity,veh_brand,B4,36.8474,38.8736,0.343236,2780.54
+Boosted frequency x severity,veh_brand,B5,-22.3086,25.6698,0.384844,3998.76
+Boosted frequency x severity,veh_brand,B6,16.0406,27.015,0.552692,3146.87
+Boosted frequency x severity,veh_brand,other 2,24.1407,15.8967,0.128957,1837.02
+Boosted frequency x severity,region,Aquitaine,1.72936,16.7061,0.917556,2858.25
+Boosted frequency x severity,region,Bretagne,10.8285,23.4923,0.644852,5663.08
+Boosted frequency x severity,region,Centre,13.9395,14.1144,0.323352,20453.6
+Boosted frequency x severity,region,Ile-de-France,-7.72926,61.2513,0.899584,6019.26
+Boosted frequency x severity,region,Languedoc-Roussillon,-6.88436,31.2907,0.825868,2903.15
+Boosted frequency x severity,region,Nord-Pas-de-Calais,9.76726,14.8688,0.511274,2297.62
+Boosted frequency x severity,region,Pays-de-la-Loire,-6.90778,46.4958,0.881899,4374.69
+Boosted frequency x severity,region,Provence-Alpes-Cotes-D'Azur,-60.4518,27.0998,0.025714,7126.41
+Boosted frequency x severity,region,Rhone-Alpes,4.42778,35.9565,0.901995,9084.77
+Boosted frequency x severity,region,other 13,-5.93879,18.7029,0.750843,10835.7
+GLM with interactions,drv_age,18-20,-198.86,225.416,0.377827,516.633
+GLM with interactions,drv_age,21-25,-43.0645,152.185,0.777205,2755.97
+GLM with interactions,drv_age,26-30,21.0559,19.3173,0.275731,5900.43
+GLM with interactions,drv_age,31-40,-6.07012,19.5983,0.756771,16577.1
+GLM with interactions,drv_age,41-50,11.8533,7.89987,0.133508,17654.3
+GLM with interactions,drv_age,51-60,-9.32676,16.58,0.573759,15061.4
+GLM with interactions,drv_age,61-70,6.59947,22.8232,0.772467,7692.31
+GLM with interactions,drv_age,71-80,-40.9772,41.5676,0.324269,4538.37
+GLM with interactions,drv_age,81+,46.958,18.6228,0.0118096,919.973
+GLM with interactions,bonus_malus,100-125,-59.4373,141.574,0.674626,1847.76
+GLM with interactions,bonus_malus,126+,-554.176,478.168,0.248211,72.4355
+GLM with interactions,bonus_malus,50,4.84612,7.69058,0.528607,44988
+GLM with interactions,bonus_malus,51-57,-40.153,31.6524,0.204619,6997.49
+GLM with interactions,bonus_malus,58-64,-13.7404,31.1408,0.659051,5395.38
+GLM with interactions,bonus_malus,65-79,1.72909,34.6711,0.960226,6220.4
+GLM with interactions,bonus_malus,80-99,9.069,56.3099,0.872052,6095.08
+GLM with interactions,veh_age,0,-28.0208,46.8608,0.54988,3247.07
+GLM with interactions,veh_age,1,-19.8643,58.6593,0.734888,6496.78
+GLM with interactions,veh_age,10-14,28.9671,10.5444,0.0060148,17142
+GLM with interactions,veh_age,15-19,-22.6462,55.3822,0.682614,7199.39
+GLM with interactions,veh_age,2-4,-16.2081,13.3097,0.223323,15914.7
+GLM with interactions,veh_age,20+,0.114347,15.0753,0.993949,1420.42
+GLM with interactions,veh_age,5-9,-3.79857,12.995,0.77005,20196.2
+GLM with interactions,veh_power,10,13.1799,13.5683,0.331398,3022.36
+GLM with interactions,veh_power,11,-37.0848,80.7187,0.645952,1647.32
+GLM with interactions,veh_power,12+,-59.75,43.5152,0.169822,1530.19
+GLM with interactions,veh_power,4,12.6384,17.6181,0.473163,12014.9
+GLM with interactions,veh_power,5,-7.20046,21.0395,0.732177,13726.6
+GLM with interactions,veh_power,6,1.47962,26.2916,0.955121,16487.8
+GLM with interactions,veh_power,7,-14.7987,23.5807,0.530285,15632.8
+GLM with interactions,veh_power,8,12.8422,13.9969,0.358904,4415.35
+GLM with interactions,veh_power,9,-3.5374,50.5699,0.944235,3139.23
+GLM with interactions,veh_brand,B1,14.3474,14.6559,0.327613,19042.6
+GLM with interactions,veh_brand,B10,-110.731,50.2928,0.0277493,1869.68
+GLM with interactions,veh_brand,B11,40.4581,30.7027,0.187703,1358.2
+GLM with interactions,veh_brand,B12,-5.21203,16.8032,0.756426,12865.3
+GLM with interactions,veh_brand,B2,-25.0386,31.3396,0.424329,18908
+GLM with interactions,veh_brand,B3,16.6156,16.7627,0.321598,5809.61
+GLM with interactions,veh_brand,B4,39.0368,38.872,0.31531,2780.54
+GLM with interactions,veh_brand,B5,-22.6197,25.6717,0.378287,3998.76
+GLM with interactions,veh_brand,B6,15.9477,27.0136,0.554974,3146.87
+GLM with interactions,veh_brand,other 2,18.2477,15.9303,0.252097,1837.02
+GLM with interactions,region,Aquitaine,0.0988349,16.7052,0.99528,2858.25
+GLM with interactions,region,Bretagne,12.0362,23.4887,0.608365,5663.08
+GLM with interactions,region,Centre,12.6228,14.1157,0.371204,20453.6
+GLM with interactions,region,Ile-de-France,-12.6215,61.2512,0.836746,6019.26
+GLM with interactions,region,Languedoc-Roussillon,-7.63285,31.2794,0.807222,2903.15
+GLM with interactions,region,Nord-Pas-de-Calais,7.74319,14.8785,0.602787,2297.62
+GLM with interactions,region,Pays-de-la-Loire,-8.08944,46.5067,0.861916,4374.69
+GLM with interactions,region,Provence-Alpes-Cotes-D'Azur,-57.262,27.1007,0.0346216,7126.41
+GLM with interactions,region,Rhone-Alpes,3.74672,35.9583,0.917015,9084.77
+GLM with interactions,region,other 13,-5.34215,18.7024,0.775157,10835.7

@@ -1,0 +1,5 @@
+model,poisson_deviance,improvement,gini,balance
+Flat rate,0.250403,0,0,1.01965
+"GLM, main effects",0.238627,0.0470292,0.293498,1.01918
+GLM with interactions,0.237711,0.0506866,0.301228,1.01888
+Boosted,0.236298,0.0563284,0.315172,1.01941

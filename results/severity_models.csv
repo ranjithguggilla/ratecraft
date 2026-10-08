@@ -1,0 +1,4 @@
+model,gamma_deviance,improvement,gini,claims
+Flat rate,1.22422,0,0,5248
+GLM,1.22073,0.00284742,0.0449105,5248
+Boosted,1.21899,0.00427018,0.0472498,5248

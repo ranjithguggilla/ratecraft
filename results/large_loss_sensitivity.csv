@@ -1,0 +1,5 @@
+threshold,loading,train_claims_over_threshold,test_gini_total_cost,test_balance_total_cost
+"25,000",0.42925,102,0.371566,1.01358
+"50,000",0.340827,50,0.368303,1.01238
+"100,000",0.265578,24,0.36261,1.00898
+none,0,0,0.334706,0.928042
